@@ -1,5 +1,7 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+app_store:
+    resource: '../src/Controller/Store/Action/'
+    type: attribute
+
+app_admin:
+    resource: '../src/Controller/Admin/'
     type: attribute
