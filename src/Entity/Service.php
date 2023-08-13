@@ -30,13 +30,8 @@ class Service
     #[ORM\Column(nullable: true)]
     private ?int $duration = null;
 
-    #[ORM\OneToMany(mappedBy: 'service', targetEntity: Category::class)]
-    private Collection $category;
-
-    public function __construct()
-    {
-        $this->category = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(inversedBy: 'services')]
+    private ?Category $category;
 
     public function getId(): ?int
     {
@@ -103,33 +98,16 @@ class Service
         return $this;
     }
 
-    /**
-     * @return Collection<int, Category>
-     */
-    public function getCategory(): Collection
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
 
-    public function addCategory(Category $category): static
+    public function setCategory(?Category $category): static
     {
-        if (!$this->category->contains($category)) {
-            $this->category->add($category);
-            $category->setService($this);
-        }
+        $this->category = $category;
 
         return $this;
     }
 
-    public function removeCategory(Category $category): static
-    {
-        if ($this->category->removeElement($category)) {
-            // set the owning side to null (unless already changed)
-            if ($category->getService() === $this) {
-                $category->setService(null);
-            }
-        }
-
-        return $this;
-    }
 }

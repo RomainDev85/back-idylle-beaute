@@ -30,15 +30,15 @@ class SubCategory
     #[ORM\Column(nullable: true)]
     private ?int $duration = null;
 
-    #[ORM\OneToMany(mappedBy: 'subCategory', targetEntity: Category::class)]
-    private Collection $category;
+    #[ORM\ManyToOne(inversedBy: 'subCategories')]
+    private ?Category $category;
 
-    #[ORM\ManyToOne(inversedBy: 'subCategory')]
-    private ?SubService $subService = null;
+    #[ORM\OneToMany(mappedBy: 'subCategory', targetEntity: SubService::class)]
+    private Collection $subServices;
 
     public function __construct()
     {
-        $this->category = new ArrayCollection();
+        $this->subServices = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -107,43 +107,43 @@ class SubCategory
     }
 
     /**
-     * @return Collection<int, Category>
+     * @return Collection<int, SubService>
      */
-    public function getCategory(): Collection
+    public function getSubServices(): Collection
     {
-        return $this->category;
+        return $this->subServices;
     }
 
-    public function addCategory(Category $category): static
+    public function addSubService(SubService $subService): static
     {
-        if (!$this->category->contains($category)) {
-            $this->category->add($category);
-            $category->setSubCategory($this);
+        if (!$this->subServices->contains($subService)) {
+            $this->subServices->add($subService);
+            $subService->setSubCategory($this);
         }
 
         return $this;
     }
 
-    public function removeCategory(Category $category): static
+    public function removeSubService(SubService $subService): static
     {
-        if ($this->category->removeElement($category)) {
+        if ($this->subServices->removeElement($subService)) {
             // set the owning side to null (unless already changed)
-            if ($category->getSubCategory() === $this) {
-                $category->setSubCategory(null);
+            if ($subService->getSubCategory() === $this) {
+                $subService->setSubCategory(null);
             }
         }
 
         return $this;
     }
 
-    public function getSubService(): ?SubService
+    public function getCategory(): ?Category
     {
-        return $this->subService;
+        return $this->category;
     }
 
-    public function setSubService(?SubService $subService): static
+    public function setCategory(?Category $category): static
     {
-        $this->subService = $subService;
+        $this->category = $category;
 
         return $this;
     }

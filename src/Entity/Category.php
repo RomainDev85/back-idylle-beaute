@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
@@ -22,11 +24,17 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $url = null;
 
-    #[ORM\ManyToOne(inversedBy: 'category')]
-    private ?Service $service = null;
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Service::class)]
+    private Collection $services;
 
-    #[ORM\ManyToOne(inversedBy: 'category')]
-    private ?SubCategory $subCategory = null;
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: SubCategory::class)]
+    private Collection $subCategories;
+
+    public function __construct()
+    {
+        $this->services = new ArrayCollection();
+        $this->subCategories = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,26 +77,52 @@ class Category
         return $this;
     }
 
-    public function getService(): ?Service
+    public function getSubCategories(): Collection
     {
-        return $this->service;
+        return $this->subCategories;
     }
 
-    public function setService(?Service $service): static
+    public function addSubCategory(?SubCategory $subCategory): static
     {
-        $this->service = $service;
+        if (!$this->subCategories->contains($subCategory)) {
+            $this->subCategories->add($subCategory);
+            $subCategory->setCategory($this);
+        }
 
         return $this;
     }
 
-    public function getSubCategory(): ?SubCategory
+    public function removeSubCategory(?SubCategory $subCategory): static
     {
-        return $this->subCategory;
+        if ($this->subCategories->contains($subCategory)) {
+            $this->subCategories->removeElement($subCategory);
+            $subCategory->setCategory(null);
+        }
+
+        return $this;
     }
 
-    public function setSubCategory(?SubCategory $subCategory): static
+    public function getServices(): Collection
     {
-        $this->subCategory = $subCategory;
+        return $this->services;
+    }
+
+    public function addService(?Service $service): static
+    {
+        if (!$this->services->contains($service)) {
+            $this->services->add($service);
+            $service->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeService(?Service $service): static
+    {
+        if ($this->services->contains($service)) {
+            $this->services->removeElement($service);
+            $service->setCategory(null);
+        }
 
         return $this;
     }

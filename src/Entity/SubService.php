@@ -30,13 +30,8 @@ class SubService
     #[ORM\Column(nullable: true)]
     private ?int $duration = null;
 
-    #[ORM\OneToMany(mappedBy: 'subService', targetEntity: SubCategory::class)]
-    private Collection $subCategory;
-
-    public function __construct()
-    {
-        $this->subCategory = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(inversedBy: 'subServices')]
+    private ?SubCategory $subCategory;
 
     public function getId(): ?int
     {
@@ -103,32 +98,14 @@ class SubService
         return $this;
     }
 
-    /**
-     * @return Collection<int, SubCategory>
-     */
-    public function getSubCategory(): Collection
+    public function getSubCategory(): ?SubCategory
     {
         return $this->subCategory;
     }
 
-    public function addSubCategory(SubCategory $subCategory): static
+    public function setSubCategory(?SubCategory $subCategory): static
     {
-        if (!$this->subCategory->contains($subCategory)) {
-            $this->subCategory->add($subCategory);
-            $subCategory->setSubService($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSubCategory(SubCategory $subCategory): static
-    {
-        if ($this->subCategory->removeElement($subCategory)) {
-            // set the owning side to null (unless already changed)
-            if ($subCategory->getSubService() === $this) {
-                $subCategory->setSubService(null);
-            }
-        }
+        $this->subCategory = $subCategory;
 
         return $this;
     }
