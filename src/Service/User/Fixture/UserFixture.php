@@ -5,25 +5,18 @@ declare(strict_types=1);
 namespace App\Service\User\Fixture;
 
 use App\Entity\User;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use App\Service\User\Factory\UserFactory;
 
 class UserFixture
 {
     public function __construct(
-        private UserPasswordHasherInterface $hasher,
+        private UserFactory $userFactory,
     )
     {
     }
 
     public function generateAdmin(): User
     {
-        $user = new User();
-        $password = $this->hasher->hashPassword($user, '123456');
-
-        $user->setEmail('paulineaubry85@gmail.com');
-        $user->setRoles(['ROLE_ADMIN']);
-        $user->setPassword($password);
-
-        return $user;
+        return $this->userFactory->createAdmin('paulineaubry85@gmail.com', '123456');
     }
 }
