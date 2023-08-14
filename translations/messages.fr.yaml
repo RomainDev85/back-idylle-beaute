@@ -1,0 +1,28 @@
+app:
+  ui:
+    admin:
+      create: Créer
+      delete: Supprimer
+      duration: Durée
+      edit: Modifier
+      logout: Déconnexion
+      list: Liste
+      name: Nom
+      price: Prix
+      category:
+        label: Catégorie
+      home:
+        label: Accueil
+      service:
+        label: Prestation
+      sub_category:
+        label: Sous-Catégorie
+      sub_service:
+        label: Prestation sous-catégorie
+    business:
+      city: Ville
+      name: Idylle Beauté
+      postcode: Code postal
+      phone_number: Numéro de téléphone
+      street: Adresse
+

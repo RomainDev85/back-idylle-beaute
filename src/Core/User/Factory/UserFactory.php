@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Service\User\Factory;
+namespace App\Core\User\Factory;
 
 use App\Entity\User;
-use App\Service\User\Enum\UserRoles;
+use App\Core\User\Enum\UserRoles;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserFactory

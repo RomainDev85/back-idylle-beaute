@@ -33,7 +33,7 @@ class SubCategory
     #[ORM\ManyToOne(inversedBy: 'subCategories')]
     private ?Category $category;
 
-    #[ORM\OneToMany(mappedBy: 'subCategory', targetEntity: SubService::class)]
+    #[ORM\OneToMany(mappedBy: 'subCategory', targetEntity: SubService::class, orphanRemoval: true)]
     private Collection $subServices;
 
     public function __construct()

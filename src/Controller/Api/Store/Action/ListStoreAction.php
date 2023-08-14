@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Store\Action;
+namespace App\Controller\Api\Store\Action;
 
 use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

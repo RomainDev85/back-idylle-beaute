@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use App\Doctrine\ORM\EventListener\CategoryListener;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[ORM\EntityListeners([CategoryListener::class])]
 class Category
 {
     #[ORM\Id]
@@ -18,16 +20,19 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description;
+
+    #[ORM\Column(length: 255, nullable: false)]
     private ?string $image = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $url = null;
+    #[ORM\Column(length: 255, unique: true, nullable: false)]
+    private ?string $url;
 
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Service::class)]
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Service::class, orphanRemoval: true)]
     private Collection $services;
 
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: SubCategory::class)]
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: SubCategory::class, orphanRemoval: true)]
     private Collection $subCategories;
 
     public function __construct()
@@ -126,4 +131,20 @@ class Category
 
         return $this;
     }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
 }

@@ -3,7 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Core\Service\Enum\ServiceDuration;
-use App\Entity\Service;
+use App\Entity\SubCategory;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
@@ -14,8 +14,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class ServiceCrudController extends AbstractCrudController
+class SubCategoryCrudController extends AbstractCrudController
 {
+
     public function __construct(
         private TranslatorInterface $translator,
     )
@@ -24,7 +25,7 @@ class ServiceCrudController extends AbstractCrudController
 
     public static function getEntityFqcn(): string
     {
-        return Service::class;
+        return SubCategory::class;
     }
 
     public function configureFields(string $pageName): iterable
@@ -32,23 +33,19 @@ class ServiceCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name')
-                ->setLabel($this->translator->trans('app.ui.admin.name'))
-                ->setRequired(true),
+                ->setLabel($this->translator->trans('app.ui.admin.name')),
             TextareaField::new('description')
                 ->setLabel('Description'),
-            AssociationField::new('category')
-                ->setLabel($this->translator->trans('app.ui.admin.category.label'))
+            AssociationField::new('category', $this->translator->trans('app.ui.admin.category.label'))
                 ->setRequired(true),
             IntegerField::new('price')
-                ->setLabel($this->translator->trans('app.ui.admin.price'))
-                ->setRequired(true),
+                ->setLabel($this->translator->trans('app.ui.admin.price')),
             ChoiceField::new('duration')
                 ->setLabel($this->translator->trans('app.ui.admin.duration'))
                 ->setChoices(ServiceDuration::DURATIONS),
             ImageField::new('image')
-                ->setLabel('Image')
-                ->setBasePath('upload/images/service')
-                ->setUploadDir('public/upload/images/service'),
+                ->setBasePath('upload/images/sub-category')
+                ->setUploadDir('public/upload/images/sub-category'),
         ];
     }
 }

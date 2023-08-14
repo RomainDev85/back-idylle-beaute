@@ -1,5 +1,5 @@
 app_store:
-    resource: '../src/Controller/Store/Action/'
+    resource: '../src/Controller/Api/Store/Action/'
     type: attribute
 
 app_admin:

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Service\User\Fixture;
+namespace App\Core\User\Fixture;
 
 use App\Entity\User;
-use App\Service\User\Factory\UserFactory;
+use App\Core\User\Factory\UserFactory;
 
 class UserFixture
 {
