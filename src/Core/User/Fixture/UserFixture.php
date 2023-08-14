@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Core\User\Fixture;
 
-use App\Entity\User;
+use App\Core\FixtureInterface;
 use App\Core\User\Factory\UserFactory;
 
-class UserFixture
+class UserFixture implements FixtureInterface
 {
     public function __construct(
         private UserFactory $userFactory,
@@ -15,8 +15,14 @@ class UserFixture
     {
     }
 
-    public function generateAdmin(): User
+    public function generate(): array
     {
-        return $this->userFactory->createAdmin('paulineaubry85@gmail.com', '123456');
+        $users = [];
+
+        foreach (UserData::get() as $user) {
+            $users[] = $this->userFactory->createAdmin($user["email"], $user["password"]);
+        }
+
+        return $users;
     }
 }
