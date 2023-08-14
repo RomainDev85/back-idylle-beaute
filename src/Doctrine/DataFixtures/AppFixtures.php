@@ -4,6 +4,7 @@ namespace App\Doctrine\DataFixtures;
 
 use App\Core\Category\Fixture\CategoryFixture;
 use App\Core\FixtureInterface;
+use App\Core\Service\Fixture\ServiceFixture;
 use App\Core\SubCategory\Fixture\SubCategoryFixture;
 use App\Core\User\Fixture\UserFixture;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -15,6 +16,7 @@ class AppFixtures extends Fixture
         private readonly UserFixture $userFixture,
         private readonly CategoryFixture $categoryFixture,
         private readonly SubCategoryFixture $subCategoryFixture,
+        private readonly ServiceFixture $serviceFixture,
     )
     {
     }
@@ -25,6 +27,7 @@ class AppFixtures extends Fixture
             $this->userFixture,
             $this->categoryFixture,
             $this->subCategoryFixture,
+            $this->serviceFixture,
         ];
 
         foreach ($entitiesFixture as $entityFixture) {
