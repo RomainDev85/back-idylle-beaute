@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\Api\Store\Action;
+namespace App\Controller\Api;
 
 use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ListStoreAction extends AbstractController
+class StoreController extends AbstractController
 {
     #[Route('/api/stores', name: "app_store_index", methods: ['GET'])]
-    public function __invoke(StoreRepository $storeRepository): JsonResponse
+    public function indexAction(StoreRepository $storeRepository): JsonResponse
     {
         $stores = $storeRepository->findAll();
 

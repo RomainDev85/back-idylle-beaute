@@ -1,5 +1,5 @@
 app_store:
-    resource: '../src/Controller/Api/Store/Action/'
+    resource: '../src/Controller/Api/StoreController.php'
     type: attribute
 
 app_admin:

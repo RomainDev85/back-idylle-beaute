@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Service\Fixture;
+namespace App\Fixture;
 
-use App\Core\FixtureInterface;
-use App\Core\Service\Factory\ServiceFactory;
+use App\Factory\ServiceFactory;
+use App\Fixture\Data\ServiceData;
 use App\Repository\CategoryRepository;
 
 class ServiceFixture implements FixtureInterface

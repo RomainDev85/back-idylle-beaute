@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\SubCategory\Fixture;
+namespace App\Fixture\Data;
 
 class SubCategoryData
 {
@@ -11,6 +11,10 @@ class SubCategoryData
             "name" => "Forfaits épilations",
             "categoryName" => "Epilation",
         ],
+        [
+            "name" => "Forfaits épilations",
+            "categoryName" => "Autres prestations",
+        ]
     ];
 
     static function get(): array

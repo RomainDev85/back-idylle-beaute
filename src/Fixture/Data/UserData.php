@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\User\Fixture;
+namespace App\Fixture\Data;
 
 class UserData
 {

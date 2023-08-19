@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Core\User\Fixture;
+namespace App\Fixture;
 
-use App\Core\FixtureInterface;
-use App\Core\User\Factory\UserFactory;
+use App\Factory\UserFactory;
+use App\Fixture\Data\UserData;
 
 class UserFixture implements FixtureInterface
 {

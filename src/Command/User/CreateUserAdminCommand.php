@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Core\User\Command;
+namespace App\Command\User;
 
-use App\Core\User\Factory\UserFactory;
+use App\Factory\UserFactory;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

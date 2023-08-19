@@ -2,8 +2,8 @@
 
 namespace App\Controller\Admin;
 
-use App\Core\Service\Enum\ServiceDuration;
 use App\Entity\Service;
+use App\Enum\Service\ServiceDuration;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;

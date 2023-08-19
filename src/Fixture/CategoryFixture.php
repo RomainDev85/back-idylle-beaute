@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Category\Fixture;
+namespace App\Fixture;
 
-use App\Core\Category\Factory\CategoryFactory;
-use App\Core\FixtureInterface;
+use App\Factory\CategoryFactory;
+use App\Fixture\Data\CategoryData;
 
 class CategoryFixture implements FixtureInterface
 {

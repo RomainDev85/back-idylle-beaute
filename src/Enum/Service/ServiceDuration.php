@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Service\Enum;
+namespace App\Enum\Service;
 
 class ServiceDuration
 {
@@ -10,7 +10,7 @@ class ServiceDuration
         '10 min' => 600,
         '15 min' => 900,
         '20 min' => 1200,
-        '30min' => 1800,
+        '30 min' => 1800,
         '45 min' => 2400,
         '1 h' => 3600,
         '1 h 15' => 4500,

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Category\Factory;
+namespace App\Factory;
 
 use App\Entity\Category;
 use Gedmo\Sluggable\Util\Urlizer as Sluggable;

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Core\SubCategory\Fixture;
+namespace App\Fixture;
 
-use App\Core\FixtureInterface;
-use App\Core\SubCategory\Factory\SubCategoryFactory;
 use App\Entity\Category;
+use App\Factory\SubCategoryFactory;
+use App\Fixture\Data\SubCategoryData;
 use App\Repository\CategoryRepository;
 
 class SubCategoryFixture implements FixtureInterface

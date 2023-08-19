@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\Service\Factory;
+namespace App\Factory;
 
 use App\Entity\Category;
 use App\Entity\Service;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core\User\Enum;
+namespace App\Enum\User;
 
 class UserRoles
 {

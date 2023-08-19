@@ -2,11 +2,11 @@
 
 namespace App\Doctrine\DataFixtures;
 
-use App\Core\Category\Fixture\CategoryFixture;
-use App\Core\FixtureInterface;
-use App\Core\Service\Fixture\ServiceFixture;
-use App\Core\SubCategory\Fixture\SubCategoryFixture;
-use App\Core\User\Fixture\UserFixture;
+use App\Fixture\CategoryFixture;
+use App\Fixture\FixtureInterface;
+use App\Fixture\ServiceFixture;
+use App\Fixture\SubCategoryFixture;
+use App\Fixture\UserFixture;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
