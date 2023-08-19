@@ -14,8 +14,8 @@ class ServiceFactory
         Category $category,
         int $price,
         ?string $description = null,
-        ?string $image = null,
         ?int $duration = null,
+        ?string $image = null,
     ): Service
     {
         $service = new Service();

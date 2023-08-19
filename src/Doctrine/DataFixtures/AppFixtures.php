@@ -6,6 +6,7 @@ use App\Fixture\CategoryFixture;
 use App\Fixture\FixtureInterface;
 use App\Fixture\ServiceFixture;
 use App\Fixture\SubCategoryFixture;
+use App\Fixture\SubServiceFixture;
 use App\Fixture\UserFixture;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -17,6 +18,7 @@ class AppFixtures extends Fixture
         private readonly CategoryFixture $categoryFixture,
         private readonly SubCategoryFixture $subCategoryFixture,
         private readonly ServiceFixture $serviceFixture,
+        private readonly SubServiceFixture $subServiceFixture,
     )
     {
     }
@@ -28,6 +30,7 @@ class AppFixtures extends Fixture
             $this->categoryFixture,
             $this->subCategoryFixture,
             $this->serviceFixture,
+            $this->subServiceFixture,
         ];
 
         foreach ($entitiesFixture as $entityFixture) {

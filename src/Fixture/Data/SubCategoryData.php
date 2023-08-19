@@ -12,7 +12,7 @@ class SubCategoryData
             "categoryName" => "Epilation",
         ],
         [
-            "name" => "Forfaits épilations",
+            "name" => "Forfaits mariée",
             "categoryName" => "Autres prestations",
         ]
     ];

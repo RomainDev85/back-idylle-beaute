@@ -23,7 +23,7 @@ class ServiceFixture implements FixtureInterface
 
         foreach (ServiceData::get() as $serviceData) {
             $category = $this->categoryRepository->findOneBy(["name" => $serviceData["categoryName"]]);
-            $service = $this->serviceFactory->createService($serviceData["name"], $category, $serviceData["price"]);
+            $service = $this->serviceFactory->createService($serviceData["name"], $category, $serviceData["price"], $serviceData["description"], $serviceData["duration"]);
 
             $services[] = $service;
         }
