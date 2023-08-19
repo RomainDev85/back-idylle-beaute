@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -41,8 +42,10 @@ class SubServiceCrudController extends AbstractCrudController
             ChoiceField::new('duration')
                 ->setLabel($this->translator->trans('app.ui.admin.duration'))
                 ->setChoices(ServiceDuration::DURATIONS),
-            IntegerField::new('price')
-                ->setLabel($this->translator->trans('app.ui.admin.price')),
+            MoneyField::new('price')
+                ->setLabel($this->translator->trans('app.ui.admin.price'))
+                ->setCurrency('EUR')
+                ->setStoredAsCents(),
             ImageField::new('image')
                 ->setBasePath('upload/images/sub-service')
                 ->setUploadDir('public/upload/images/sub-service')

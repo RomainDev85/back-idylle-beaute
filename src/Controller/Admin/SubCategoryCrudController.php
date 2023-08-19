@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -38,8 +39,10 @@ class SubCategoryCrudController extends AbstractCrudController
                 ->setLabel('Description'),
             AssociationField::new('category', $this->translator->trans('app.ui.admin.category.label'))
                 ->setRequired(true),
-            IntegerField::new('price')
-                ->setLabel($this->translator->trans('app.ui.admin.price')),
+            MoneyField::new('price')
+                ->setLabel($this->translator->trans('app.ui.admin.price'))
+                ->setCurrency('EUR')
+                ->setStoredAsCents(),
             ChoiceField::new('duration')
                 ->setLabel($this->translator->trans('app.ui.admin.duration'))
                 ->setChoices(ServiceDuration::DURATIONS),

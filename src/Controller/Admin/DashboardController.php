@@ -41,13 +41,13 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             MenuItem::linkToDashboard($this->translator->trans('app.ui.admin.home.label'), 'fa fa-home'),
-            MenuItem::linkToCrud($this->translator->trans('app.ui.admin.category.label'), 'fas fa-map-marker-alt', Category::class),
-            MenuItem::subMenu($this->translator->trans('app.ui.admin.sub_category.label'), 'fas fa-map-marker-alt')->setSubItems([
-                MenuItem::linkToCrud($this->translator->trans('app.ui.admin.list'), 'fas fa-map-marker-alt', SubCategory::class),
-                MenuItem::linkToCrud($this->translator->trans('app.ui.admin.sub_service.label'), 'fas fa-map-marker-alt', SubService::class),
+            MenuItem::linkToCrud($this->translator->trans('app.ui.admin.category.label'), 'fa-solid fa-list', Category::class),
+            MenuItem::linkToCrud($this->translator->trans('app.ui.admin.service.label'), 'fa-solid fa-list', Service::class),
+            MenuItem::subMenu($this->translator->trans('app.ui.admin.sub_category.label'), 'fa-solid fa-list')->setSubItems([
+                MenuItem::linkToCrud($this->translator->trans('app.ui.admin.list'), 'fa-solid fa-list', SubCategory::class),
+                MenuItem::linkToCrud($this->translator->trans('app.ui.admin.sub_service.label'), 'fa-solid fa-list', SubService::class),
             ]),
-            MenuItem::linkToCrud($this->translator->trans('app.ui.admin.service.label'), 'fas fa-map-marker-alt', Service::class),
-            MenuItem::linkToLogout($this->translator->trans('app.ui.admin.logout'), 'fa fa-exit'),
+            MenuItem::linkToLogout($this->translator->trans('app.ui.admin.logout'), 'fa-solid fa-power-off'),
         ];
     }
 }
