@@ -1,0 +1,20 @@
+<div class="list-prestations">
+    <ul>
+        {% for service in services %}
+            <li>
+                <div class="left">
+                    <h3>{{ service.name }}</h3>
+                    {% if service.description is not null %}
+                        {{ service.description }}
+                    {% endif %}
+                </div>
+                <div class="right">
+                    <h3>{{ service.price / 100 }} €</h3>
+                    {% if service.duration is not null %}
+                        <p>{{ service.duration|app_time }}</p>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

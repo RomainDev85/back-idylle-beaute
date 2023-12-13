@@ -1,0 +1,133 @@
+.list-prestations {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+
+  ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+
+    li {
+      display: flex;
+      width: 1400px;
+      justify-content: space-between;
+      padding: 15px 0px;
+
+      .left {
+
+        p {
+          margin-left: 20px;
+          font-size: 20px;
+          font-family: 'DM Serif Display', serif;
+          color: #823085;
+          width: 65%;
+        }
+        h3 {
+          font-size: 30px;
+          color: #9C89B8;
+          font-family: 'DM Serif Display', serif;
+
+
+        }
+        h3::first-letter {
+          text-transform: uppercase;
+        }
+
+      }
+      .right {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        h3 {
+          display: inline-block;
+          white-space:nowrap;
+          padding: 10px 20px;
+          color: #F0E6EF;
+          background: #9C89B8;
+          font-family: 'DM Serif Display', serif;
+          height: min-content;
+        }
+        p {
+          display: inline-block;
+          white-space:nowrap;
+          font-size: 30px;
+          margin: 10px 20px;
+          color: #9C89B8;
+          font-family: 'DM Serif Display', serif;
+          font-weight: lighter;
+          letter-spacing: .1px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1500px){
+  .list-prestations ul li {
+    width: 1150px;
+  }
+}
+@media (max-width: 1200px){
+  .list-prestations ul li {
+    width: 900px;
+  }
+}
+@media (max-width: 1000px){
+  .list-prestations ul li {
+    width: 750px;
+
+    .left {
+      p {
+        width: 75%;
+      }
+    }
+  }
+}
+@media (max-width: 800px){
+  .list-prestations {
+    margin-top: 60px;
+
+    ul {
+      li {
+        width: 500px;
+        flex-direction: column;
+        margin: 5px;
+
+        .left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          h3 {
+            text-align: center;
+          }
+
+          p{
+            text-align: center;
+            margin-left: 0;
+          }
+        }
+        .right {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 550px){
+  .list-prestations ul li {
+    width: 350px;
+  }
+}
+@media (max-width: 400px){
+  .list-prestations ul li {
+    width: 300px;
+    padding: 10px 0px;
+  }
+}
