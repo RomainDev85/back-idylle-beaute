@@ -1,0 +1,527 @@
+.description {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.description h2 {
+  font-size: 60px;
+  font-family: 'DM Serif Display', serif;
+  color: #9C89B8;
+  display: flex;
+  flex-direction: column;
+}
+.description h2 .first {
+  margin-left: -150px;
+
+}
+.description h2 .second {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+.description h2 .third {
+  margin-left: 350px;
+  margin-top: 20px;
+}
+.description .institut {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+  scroll-margin-top: 155px;
+}
+.description .institut-img {
+  position: relative;
+  width: 800px;
+  height: 500px;
+}
+.description .institut-img img {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  box-shadow: -1px 0px 29px -7px rgba(0,0,0,0.75);
+}
+.description .institut-img .slide1 {
+  -webkit-animation: fadeinstitut1 9s infinite;
+  animation: fadeinstitut1 9s infinite;
+}
+.description .institut-img .slide2 {
+  -webkit-animation: fadeinstitut2 9s infinite;
+  animation: fadeinstitut2 9s infinite;
+}
+.description .institut-img .slide3 {
+  -webkit-animation: fadeinstitut3 9s infinite;
+  animation: fadeinstitut3 9s infinite;
+}
+.description .institut p {
+  width: 600px;
+  font-size: 30px;
+  font-family: 'DM Serif Display', serif;
+  text-align: center;
+  padding: 30px;
+  line-height: 50px;
+  color: #9C89B8;
+}
+.description .produit {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-top: 100px;
+  align-items: center;
+  scroll-margin-top: 155px;
+}
+.description .produit .baija-img {
+  position: relative;
+  width: 600px;
+  height: 600px;
+}
+.description .produit .baija-img img {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  box-shadow: -1px 0px 29px -7px rgba(0,0,0,0.75);
+}
+.description .produit p {
+  width: 800px;
+  font-size: 30px;
+  font-family: 'DM Serif Display', serif;
+  text-align: center;
+  padding: 30px;
+  line-height: 50px;
+  color: #9C89B8;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.description .baija-img .slide1 {
+  -webkit-animation: fadeproduit1 12s infinite;
+  animation: fadeproduit1 12s infinite;
+}
+.description .baija-img .slide2 {
+  -webkit-animation: fadeproduit2 12s infinite;
+  animation: fadeproduit2 12s infinite;
+}
+.description .baija-img .slide3 {
+  -webkit-animation: fadeproduit3 12s infinite;
+  animation: fadeproduit3 12s infinite;
+}
+.description .baija-img .slide4 {
+  -webkit-animation: fadeproduit4 12s infinite;
+  animation: fadeproduit4 12s infinite;
+}
+@-webkit-keyframes fadeinstitut1 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeinstitut1 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeinstitut2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeinstitut2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeinstitut3 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeinstitut3 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeproduit1 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeproduit1 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeproduit2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeproduit2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeproduit3 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeproduit3 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeproduit4 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeproduit4 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (max-width: 1800px) {
+  .description h2 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 1500px) {
+  .description .institut-img {
+    width: 600px;
+    height: 400px;
+
+  }
+  .description .institut-img img {
+    width: 600px;
+    height: 400px;
+  }
+  .description .produit .baija-img {
+    width: 400px;
+    height: 400px;
+  }
+  .description .produit .baija-img img {
+    width: 400px;
+    height: 400px;
+  }
+  .description .produit p {
+    font-size: 24px;
+    width: 650px;
+  }
+  .description .institut p {
+    font-size: 24px;
+    width: 450px;
+  }
+}
+@media (max-width: 1400px) {
+  .description h2 {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+  .description .institut {
+    margin-top: 30px;
+  }
+  .description .produit {
+    margin-top: 30px;
+  }
+  .description h2 .first {
+    margin-left: -50px;
+  }
+  .description h2 .second {
+    margin-top: 0px;
+    margin-left: 150px;
+  }
+  .description h2 .third {
+    margin-top: 0px;
+    margin-left: 450px;
+  }
+}
+@media (max-width: 1250px) {
+  .description .produit {
+    flex-direction: column;
+  }
+  .description .institut {
+    flex-direction: column;
+  }
+  .description .produit p {
+    width: 800px;
+    padding: 40px 30px 30px 30px;
+    line-height: 35px;
+  }
+  .description .institut p {
+    width: 800px;
+    padding: 40px 30px 30px 30px;
+  }
+  .description .produit .baija-img {
+    width: 600px;
+    height: 600px;
+  }
+  .description .produit .baija-img img {
+    width: 600px;
+    height: 600px;
+  }
+}
+@media (max-width: 900px) {
+  .description {
+    margin-top: 0px;
+  }
+  .description h2 .first {
+    margin-left: 20px;
+  }
+  .description h2 .second {
+    margin-top: 0px;
+    margin-left: 100px;
+  }
+  .description h2 .third {
+    margin-top: 0px;
+    margin-left: 350px;
+  }
+  .description .institut p {
+    width: 600px;
+    padding: 30px 20px 20px 20px;
+  }
+  .description .produit p {
+    width: 600px;
+    padding: 30px 20px 20px 20px;
+  }
+}
+@media (max-width: 700px){
+  .description {
+    margin-top: 20px;
+  }
+  .description h2 {
+    font-size: 30px;
+  }
+  .description h2 .first {
+    margin-left: 0px;
+  }
+  .description h2 .second {
+    margin-left: 50px;
+  }
+  .description h2 .third {
+    margin-left: 250px;
+  }
+  .description .produit {
+    scroll-margin-top: 120px;
+  }
+  .description .institut {
+    scroll-margin-top: 120px;
+  }
+  .description .produit p {
+    font-size: 20px;
+    line-height: 30px;
+    width: 450px;
+    margin: 0;
+  }
+  .description .institut p {
+    font-size: 20px;
+    //line-height: 30px;
+    width: 450px;
+    margin: 0;
+  }
+  .description .produit .baija-img {
+    width: 390px;
+    height: 390px;
+  }
+  .description .produit .baija-img img {
+    width: 390px;
+    height: 390px;
+  }
+  .description .institut .institut-img {
+    width: 390px;
+    height: 260px;
+  }
+  .description .institut .institut-img img {
+    width: 390px;
+    height: 260px;
+  }
+}
+@media (max-width: 500px) {
+  .description h2 .first {
+    margin-left: 10px;
+  }
+  .description h2 .second {
+    margin-top: 15px;
+    margin-left: 25px;
+  }
+  .description h2 .third {
+    margin-top: 15px;
+    margin-left: 40px;
+  }
+  .description .produit {
+    scroll-margin-top: 100px;
+  }
+  .description .institut {
+    scroll-margin-top: 100px;
+  }
+  .description .produit p {
+    width: 300px;
+  }
+  .description .institut p {
+    width: 300px;
+  }
+  .description .produit .baija-img {
+    width: 300px;
+    height: 300px;
+  }
+  .description .produit .baija-img img {
+    width: 300px;
+    height: 300px;
+  }
+  .description .institut .institut-img {
+    width: 300px;
+    height: 200px;
+  }
+  .description .institut .institut-img img {
+    width: 300px;
+    height: 200px;
+  }
+}

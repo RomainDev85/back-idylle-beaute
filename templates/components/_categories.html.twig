@@ -1,0 +1,12 @@
+<section class="services" id="prestations">
+    {% for key, category in categories %}
+        <div class="carte-service {{ (key is odd) ? 'second' : 'first' }}">
+            <img src="{{ asset('/upload/images/category/' ~ category.image ) }}" alt="categorie {{ category.name }}"/>
+            <div class="content">
+                <h3>{{ category.name }}</h3>
+                <span></span>
+                <a href="#">Plus d'infos</a>
+            </div>
+        </div>
+    {% endfor %}
+</section>

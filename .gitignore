@@ -56,3 +56,7 @@
 /yarn-error.log
 /yarn.lock
 ###< symfony/webpack-encore-bundle ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+###< symfony/asset-mapper ###

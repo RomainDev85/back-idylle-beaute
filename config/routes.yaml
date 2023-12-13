@@ -5,3 +5,7 @@ app_store:
 app_admin:
     resource: '../src/Controller/Admin/'
     type: attribute
+
+app_front:
+    resource: '../src/Controller/Front'
+    type: attribute

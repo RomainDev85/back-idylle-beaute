@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Idylle Beauté{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
+{% endblock %}
+
+{% block body %}
+    {% include 'components/_navbar.html.twig' %}
+    {% include 'components/_header.html.twig' %}
+    {% include 'components/_description.html.twig' %}
+    {% include 'components/_categories.html.twig' with {'categories': categories} %}
+    {% include 'components/_contact.html.twig'%}
+{% endblock %}
