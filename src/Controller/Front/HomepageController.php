@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class Homepage extends AbstractController
+class HomepageController extends AbstractController
 {
     public function __construct(
         private readonly CategoryRepository $categoryRepository,

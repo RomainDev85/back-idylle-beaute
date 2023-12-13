@@ -1,0 +1,8 @@
+<section class="header-categorie">
+    <h2>{{ category.name }}</h2>
+    <div class="image-desktop">
+        {% for key in ['1', '2', '3', '4', '5'] %}
+            <img src="{{ asset('static/' ~ category.url ~ '/' ~ category.url ~ key ~ '.jpg' ) }}" id="img{{ key }}"/>
+        {% endfor %}
+    </div>
+</section>
