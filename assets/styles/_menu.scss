@@ -1,17 +1,57 @@
 .menu-navigation {
   position:absolute;
-  top: 0;
+  top: -100vh;
   width: 100vw;
   height: 100vh;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #9C89B8;
   z-index: 950;
+  transition-duration: .3s;
+  opacity: 0;
 
   &.open {
-    display: flex;
+    //display: flex;
     position: fixed;
+    top: 0vh;
+    opacity: 1;
+    transition-duration: .3s;
+
+    li {
+      margin-right: 0px;
+
+      &:first-child {
+        opacity: 1;
+        transition-delay: .2s;
+        transition-duration: .2s;
+      }
+      &:nth-child(2){
+        opacity: 1;
+        transition-delay: .3s;
+        transition-duration: .2s;
+      }
+      &:nth-child(3){
+        opacity: 1;
+        transition-delay: .4s;
+        transition-duration: .2s;
+      }
+      &:nth-child(4){
+        opacity: 1;
+        transition-delay: .5s;
+        transition-duration: .2s;
+      }
+      &:nth-child(5){
+        opacity: 1;
+        transition-delay: .6s;
+        transition-duration: .2s;
+      }
+      &:nth-child(6){
+        opacity: 1;
+        transition-delay: .7s;
+        transition-duration: .2s;
+      }
+    }
   }
 
   ul {
@@ -21,7 +61,9 @@
   }
 
   li {
-    margin: 20px;
+    opacity: 0;
+    margin: 10px;
+    margin-right: -40px;
   }
 
   a {
@@ -32,6 +74,7 @@
 
   i {
     margin-right: 15px;
+    color: #F0E6EF;
   }
 
 }

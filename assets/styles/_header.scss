@@ -29,12 +29,19 @@
 
     a {
       text-decoration: none;
-      color: #9C89B8;
       padding: 20px;
       border: 3px solid #9C89B8;
+      background: #9C89B8;
+      color: #F0E6EF;
       font-size: 25px;
       margin: 20px;
       font-family: 'DM Serif Display', serif;
+      transition-duration: .2s;
+
+      &:hover {
+        color: #9C89B8;
+        background: #F0E6EF;
+      }
     }
   }
 }
