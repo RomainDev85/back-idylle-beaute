@@ -6,7 +6,7 @@ nav {
   // position: relative;
   position: fixed;
   background-color: #F0E6EF;
-  z-index: 10;
+  z-index: 1000;
   // transition: 0.4s;
   transition-duration: 0.3s;
   .menu-btn {
@@ -82,9 +82,25 @@ nav {
     height: 121px;
   }
 }
-.navigation-open {
-  position: fixed;
-  background-color: #9C89B8;
+.navigation {
+  #logo-clair {
+    display: none;
+  }
+  #logo-fonce {
+    display: block;
+  }
+  &.open {
+    position: fixed;
+    background-color: #9C89B8;
+
+    #logo-clair {
+      display: block;
+    }
+
+    #logo-fonce {
+      display: none;
+    }
+  }
 }
 .undernav {
   height: 135px;

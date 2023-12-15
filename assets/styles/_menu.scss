@@ -1,0 +1,49 @@
+.menu-navigation {
+  position:absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #9C89B8;
+  z-index: 950;
+
+  &.open {
+    display: flex;
+    position: fixed;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin: 20px;
+  }
+
+  a {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: #F0E6EF;
+  }
+
+  i {
+    margin-right: 15px;
+  }
+
+}
+@media (max-width: 900px){
+  .menu-navigation {
+
+    ul {
+      margin-top: 70px;
+    }
+
+    a {
+      font-size: 20px;
+    }
+  }
+}
