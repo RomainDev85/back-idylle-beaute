@@ -10,6 +10,10 @@
 
 body {
   background: #F0E6EF;
+
+  &.menu-open {
+    overflow: hidden;
+  }
 }
 
 li {
