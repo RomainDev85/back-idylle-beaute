@@ -15,7 +15,7 @@
     width: 1600px;
     height: 800px;
     position: relative;
-    margin-top: 75px;
+    margin-top: 40px;
     display : block;
 
     img {
@@ -323,7 +323,7 @@
 }
 @media (max-width: 850px) {
   .header-categorie .image-desktop {
-    width: 700px;
+    width: 750px;
     height: 350px;
 
     img {
@@ -354,11 +354,52 @@
     h2 {
       margin-top: 200px;
     }
+
+    .image-desktop {
+      #img1 {
+        left: 100px;
+      }
+      #img2 {
+        right: 100px;
+      }
+      #img3 {
+        left: 240px;
+      }
+      #img3 {
+        left: 30px;
+      }
+      #img5 {
+        right: 30px;
+      }
+    }
   }
 }
-@media (max-width: 700px) {
-  .header-categorie h2 {
-    margin-top: 150px;
+@media (max-width: 750px) {
+  .header-categorie {
+    h2 {
+      margin-top: 150px;
+    }
+    .image-desktop {
+      margin-bottom: 100px;
+      width: 550px;
+
+      #img1 {
+        left: 25px;
+      }
+      #img2 {
+        right: 25px;
+      }
+      #img3 {
+        left: 15px;
+      }
+      #img4 {
+        left: 120px;
+        top: 290px;
+      }
+      #img5 {
+        right: 15px;
+      }
+    }
   }
 }
 @media (max-width: 550px) {
@@ -369,25 +410,78 @@
     color: #9C89B8;
     font-family: 'DM Serif Display', serif;
   }
-  .header-categorie .image-mobile {
+  .header-categorie .image-desktop {
     width: 420px;
     height: 280px;
-    margin-top: 40px;
-
+    margin-top: 20px;
+    margin-bottom: 20px;
     img {
-      width: 420px;
-      height: 280px;
+      width: 210px;
+      height: 140px;
+    }
+    #img1 {
+      left: 0px;
+    }
+    #img2 {
+      right: 0px;
+    }
+    #img3 {
+      left: 5px;
+      top: 120px;
+      z-index: 4;
+      //transform: rotate(3deg);
+    }
+    #img4 {
+      left: 100px;
+      top: 200px;
+      z-index: 4;
+    }
+    #img5 {
+      left: 190px;
+      top: 120px;
+      z-index: 4;
     }
   }
 }
 @media (max-width: 450px) {
-  .header-categorie .image-mobile {
-    width: 300px;
-    height: 200px;
+  .header-categorie h2 {
+    text-align: center;
+    margin-top: 120px;
+    font-size: 40px;
+    color: #9C89B8;
+    font-family: 'DM Serif Display', serif;
+  }
+  .header-categorie .image-desktop {
+    width: 360px;
+    height: 280px;
+    margin-top: 20px;
+    margin-bottom: 170px;
 
     img {
-      width: 300px;
-      height: 200px;
+      width: 210px;
+      height: 140px;
+    }
+    #img1 {
+      left: 10px;
+      top: 72px;
+    }
+    #img2 {
+      right: 15px;
+    }
+    #img3 {
+      right: 130px;
+      top: 248px;
+      z-index: 4;
+    }
+    #img4 {
+      left: 120px;
+      top: 344px;
+      z-index: 4;
+    }
+    #img5 {
+      left: 135px;
+      top: 159px;
+      z-index: 3;
     }
   }
 }

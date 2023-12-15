@@ -1,4 +1,4 @@
 // const menu = new Menu();
 // menu.log();
 
-window.menu.log('totoito')
+// window.menu.log('totoito')
