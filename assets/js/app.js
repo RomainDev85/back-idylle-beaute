@@ -2,6 +2,7 @@ const btnMenu = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu-navigation');
 const nav = document.querySelector('.navigation');
 const body = document.querySelector('body');
+const btnOtherService = document.querySelector('#other-services');
 
 const toggleMenu = () => {
 	body.classList.toggle('menu-open');
@@ -19,3 +20,15 @@ menu.addEventListener('click', (e) => {
 		toggleMenu();
 	}
 })
+
+if (btnOtherService) {
+	document.addEventListener('scroll', () => {
+		console.log(window.scrollY);
+		if (window.scrollY > 250) {
+			btnOtherService.style.display = 'block';
+		} else {
+			btnOtherService.style.display = 'none';
+		}
+
+	})
+}

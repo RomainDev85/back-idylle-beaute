@@ -1,3 +1,14 @@
+a#other-services {
+  background: #9C89B8;
+  color: #F0E6EF;
+  padding: 5px 10px;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: none;
+}
 .list-prestations {
   display: flex;
   justify-content: center;
