@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 class AppFixtures extends Fixture
 {
     public function __construct(
-        private readonly UserFixture $userFixture,
+//        private readonly UserFixture $userFixture,
         private readonly CategoryFixture $categoryFixture,
         private readonly SubCategoryFixture $subCategoryFixture,
         private readonly ServiceFixture $serviceFixture,
@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $entitiesFixture = [
-            $this->userFixture,
+//            $this->userFixture,
             $this->categoryFixture,
             $this->subCategoryFixture,
             $this->serviceFixture,
