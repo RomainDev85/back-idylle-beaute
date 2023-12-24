@@ -15,8 +15,6 @@
     <body>
         {% block body %}{% endblock %}
 
-        {% include 'components/_menu.html.twig' %}
-
         {% block javascripts %}
             <script type="module" src="{{ asset('js/app.js') }}"></script>
         {% endblock %}

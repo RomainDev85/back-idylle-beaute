@@ -11,15 +11,19 @@ const toggleMenu = () => {
 	nav.classList.toggle('open');
 }
 
-btnMenu.addEventListener('click', () => {
-	toggleMenu();
-})
-
-menu.addEventListener('click', (e) => {
-	if (e.target.tagName === "A") {
+if (btnMenu) {
+	btnMenu.addEventListener('click', () => {
 		toggleMenu();
-	}
-})
+	})
+}
+
+if (menu) {
+	menu.addEventListener('click', (e) => {
+		if (e.target.tagName === "A") {
+			toggleMenu();
+		}
+	})
+}
 
 if (btnOtherService) {
 	document.addEventListener('scroll', () => {
