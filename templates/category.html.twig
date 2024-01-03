@@ -12,5 +12,13 @@
     {% include 'components/_services.html.twig' with { 'services': services } %}
     {% include 'components/_menu.html.twig' %}
 
+    {% if subCategories is not empty %}
+        {% for subCategory in subCategories %}
+            {% if subCategory.subServices is not empty %}
+                {% include 'components/_subCategory.html.twig' with { 'subCategory': subCategory } %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
     <a href="/#prestations" id="other-services">Voir les autres prestations</a>
 {% endblock %}

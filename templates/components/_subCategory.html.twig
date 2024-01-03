@@ -1,0 +1,18 @@
+<div class="little-category">
+    <h3>{{ subCategory.name }}</h3>
+    <ul>
+        {% for subService in subCategory.subServices %}
+        <li>
+            <div class="left">
+                <h4>{{ subService.name }}</h4>
+            </div>
+            <div class="right">
+                <h4>{{ subService.price / 100 }} €</h4>
+                {% if subService.duration is not same as null %}
+                    <p>{{ subService.duration|app_time }}</p>
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
