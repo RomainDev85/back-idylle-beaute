@@ -8,7 +8,7 @@ class CategoryImageData
 {
     private const DATA = [
         [
-            "name" => "epilation-65ac3fde0cadd547464837.webp",
+            "name" => "epilation1.jpg",
             "categoryName" => 'Epilation',
         ],
         [
