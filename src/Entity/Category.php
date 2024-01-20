@@ -23,8 +23,12 @@ class Category
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description;
 
-    #[ORM\Column(length: 255, nullable: false)]
-    private ?string $image = null;
+//    #[ORM\Column(length: 255, nullable: false)]
+//    private ?string $image = null;
+
+    #[ORM\OneToMany(targetEntity: "CategoryImage", mappedBy: "category", cascade: ['persist'], orphanRemoval: true)]
+    private Collection $images;
+
 
     #[ORM\Column(length: 255, unique: true, nullable: false)]
     private ?string $url;
@@ -37,8 +41,10 @@ class Category
 
     public function __construct()
     {
+
         $this->services = new ArrayCollection();
         $this->subCategories = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,23 +57,9 @@ class Category
         return $this->name;
     }
 
-    public function setName(string $name): static
+    public function setName(?string $name): void
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): static
-    {
-        $this->image = $image;
-
-        return $this;
     }
 
     public function getUrl(): ?string
@@ -145,6 +137,26 @@ class Category
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(CategoryImage $categoryImage): void
+    {
+        if (!$this->images->contains($categoryImage)) {
+            $this->images->add($categoryImage);
+            $categoryImage->setCategory($this);
+        }
+    }
+
+    public function removeImage(CategoryImage $categoryImage): void
+    {
+        if ($this->images->contains($categoryImage)) {
+            $this->images->removeElement($categoryImage);
+        }
     }
 
 }

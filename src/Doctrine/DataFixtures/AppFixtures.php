@@ -3,6 +3,7 @@
 namespace App\Doctrine\DataFixtures;
 
 use App\Fixture\CategoryFixture;
+use App\Fixture\CategoryImageFixture;
 use App\Fixture\FixtureInterface;
 use App\Fixture\ServiceFixture;
 use App\Fixture\SubCategoryFixture;
@@ -16,6 +17,7 @@ class AppFixtures extends Fixture
     public function __construct(
 //        private readonly UserFixture $userFixture,
         private readonly CategoryFixture $categoryFixture,
+        private readonly CategoryImageFixture $categoryImageFixture,
         private readonly SubCategoryFixture $subCategoryFixture,
         private readonly ServiceFixture $serviceFixture,
         private readonly SubServiceFixture $subServiceFixture,
@@ -28,6 +30,7 @@ class AppFixtures extends Fixture
         $entitiesFixture = [
 //            $this->userFixture,
             $this->categoryFixture,
+            $this->categoryImageFixture,
             $this->subCategoryFixture,
             $this->serviceFixture,
             $this->subServiceFixture,

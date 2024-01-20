@@ -9,7 +9,7 @@ use Gedmo\Sluggable\Util\Urlizer as Sluggable;
 
 class CategoryFactory
 {
-    public function createCategory(string $name, string $image, ?string $description): Category
+    public function createCategory(string $name, ?string $description): Category
     {
         $category = new Category();
 
@@ -17,7 +17,6 @@ class CategoryFactory
 
         $category->setName($name);
         $category->setUrl($slug);
-        $category->setImage($image);
         $category->setDescription($description);
 
         return $category;

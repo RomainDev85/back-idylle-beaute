@@ -27,3 +27,9 @@ services:
         class: App\Core\Factory\AbstractEntityFactory
         arguments:
             - '@doctrine'
+
+    App\Factory\CategoryImageFactory:
+        class: App\Factory\CategoryImageFactory
+        arguments:
+            - '@App\Repository\CategoryRepository'
+            - '%kernel.project_dir%'

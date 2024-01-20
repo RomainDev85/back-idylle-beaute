@@ -22,7 +22,6 @@ class CategoryFixture implements FixtureInterface
         foreach (CategoryData::get() as $categoryData) {
             $category = $this->categoryFactory->createCategory(
                 $categoryData["name"],
-                $categoryData["image"],
                 $categoryData["description"]
             );
 

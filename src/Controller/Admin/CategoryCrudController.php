@@ -3,7 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Form\Type\CategoryImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -34,9 +37,8 @@ class CategoryCrudController extends AbstractCrudController
             TextareaField::new('description')
                 ->setLabel('Description')
                 ->setRequired(false),
-            ImageField::new('image')
-                ->setBasePath('upload/images/category')
-                ->setUploadDir('public/upload/images/category')
+            CollectionField::new('images')
+                ->setEntryType(CategoryImageType::class)
         ];
     }
 }

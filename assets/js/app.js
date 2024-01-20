@@ -27,7 +27,6 @@ if (menu) {
 
 if (btnOtherService) {
 	document.addEventListener('scroll', () => {
-		console.log(window.scrollY);
 		if (window.scrollY > 250) {
 			btnOtherService.style.display = 'block';
 		} else {
