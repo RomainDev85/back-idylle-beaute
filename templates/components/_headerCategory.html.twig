@@ -3,7 +3,7 @@
     <div class="image-desktop">
         {% for key, image in category.images %}
             {% if key < 5 %}
-                <img src="{{ asset('upload/images/category/' ~ image.name) }}" id="img{{ key + 1 }}"/>
+                <img src="{{ asset('upload/images/category/' ~ image.name) }}"/>
             {% endif %}
         {% endfor %}
     </div>
